@@ -1,41 +1,43 @@
 .title > header{
   padding: 25px 20px;
-  background-color: hsl(210, 12%, 15%);
+  background-color: #0b4c96e0;
   color: white;
-  font-size: 28px;
-  font-family: cursive;
-}
-
-.title__container {
+  font-size: 32px;
+  font-family: 'Montserrat', sans-serif;
+  }
+  
+  .title__container {
   width: 95%;
   margin: 50px auto 0 auto;
   display: flex;
   justify-content: center;
   flex-direction: column;
-}
-
-.title__container > button {
+  align-items: center;
+  }
+  
+  .title__container > button {
   border-radius: 5px;
   border: none;
   color: white;
-  font-size: 18px;
+  font-size: 20px;
   padding: 10px 15px;
   margin: 0 auto;
-  background-color: hsl(210, 12%, 15%);
+  background-color: #264ac9;
   cursor: pointer;
-}
-
-.title__container > button:hover{
-  background-color: hsl(210, 12%, 25%);
-}
-
-.todoApp__container > button:active{
-  background-color: hsl(210, 12%, 15%);
-}
-
-.todoApp__tasks{
+  transition: background-color 0.2s ease-in-out;
+  }
+  
+  .title__container > button:hover{
+  background-color: #4785e8;
+  }
+  
+  .todoApp__container > button:active{
+  background-color: #1c1c1c;
+  }
+  
+  .todoApp__tasks{
   display: flex;
   flex-direction: column;
   gap: 20px;
   margin-top: 20px;
-}
+  }

@@ -1,48 +1,75 @@
-.addTodo{
+.addTodo {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  margin-top: 10px;
+  gap: 20px;
+  margin-top: 30px;
   z-index: 100;
 }
 
-.addTodo input{
-  height: 40px;
-  border: unset;
+.addTodo input,
+.addTodo textarea {
   font-size: 18px;
-  box-sizing: border-box;
-  -webkit-box-sizing:border-box;
-  -moz-box-sizing: border-box;
-  border-bottom: 1.5px solid hsl(210, 10%, 75%);
-  padding-left: 5px;
+  border: none;
+  border-bottom: 2px solid hsl(210, 10%, 75%);
+  padding: 10px 5px;
+  background-color: transparent;
+  color: hsl(210, 10%, 25%);
+  transition: border-color 0.3s ease-in-out;
 }
 
-.addTodo input:focus{
+.addTodo input:focus,
+.addTodo textarea:focus {
   outline: none;
+  border-color: hsl(210, 70%, 50%);
 }
 
 .addTodo button {
   height: 40px;
   border: none;
+  border-radius: 4px;
   color: white;
-  background-color: hsl(210, 12%, 15%);
-}
-
-.addTodo textarea {
-  height: 150px;
-  border-color: hsl(210, 10%, 75%);
-  padding: 5px;
+  background-color: hsl(210, 70%, 50%);
   font-size: 18px;
-}
-
-.addTodo textarea:focus { 
-  outline: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
 }
 
 .addTodo button:hover {
-  background-color: hsl(210, 12%, 25%);
+  background-color: hsl(210, 70%, 40%);
 }
 
 .addTodo button:active {
-  background-color: hsl(210, 12%, 15%);
+  background-color: hsl(210, 70%, 50%);
+}
+
+.addTodo textarea {
+  resize: none;
+}
+
+.addTodo label {
+  font-size: 18px;
+  color: hsl(210, 10%, 25%);
+  margin-bottom: 5px;
+}
+
+.addTodo .input-container {
+  position: relative;
+}
+
+.addTodo .input-container:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: hsl(210, 10%, 75%);
+  z-index: -1;
+  transition: height 0.3s ease-in-out;
+}
+
+.addTodo input:focus ~ .input-container:before,
+.addTodo textarea:focus ~ .input-container:before {
+  height: 100%;
 }

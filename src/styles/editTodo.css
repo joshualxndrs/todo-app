@@ -1,49 +1,103 @@
-.editTodo{
+.editTodo {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  margin-top: 10px;
+  gap: 20px;
+  margin-top: 30px;
   z-index: 100;
+  pointer-events: auto;
 }
 
-.editTodo input{
-  height: 40px;
-  border: unset;
+.editTodo input,
+.editTodo textarea {
   font-size: 18px;
-  box-sizing: border-box;
-  -webkit-box-sizing:border-box;
-  -moz-box-sizing: border-box;
-  border-bottom: 1.5px solid hsl(210, 10%, 75%);
-  padding-left: 5px;
+  border: none;
+  border-bottom: 2px solid hsl(210, 10%, 75%);
+  padding: 10px 5px;
+  background-color: transparent;
+  color: hsl(210, 10%, 25%);
+  transition: border-color 0.3s ease-in-out;
 }
 
-.editTodo input:focus{
+.editTodo input:focus,
+.editTodo textarea:focus {
   outline: none;
+  border-color: hsl(210, 70%, 50%);
 }
 
 .editTodo button {
   height: 40px;
   border: none;
+  border-radius: 4px;
   color: white;
-  background-color: hsl(210, 12%, 15%);
-}
-
-.editTodo textarea {
-  height: 150px;
-  border-color: hsl(210, 10%, 75%);
-  padding: 5px;
+  background-color: hsl(210, 70%, 50%);
   font-size: 18px;
-  line-height: 25px;
-}
-
-.editTodo textarea:focus { 
-  outline: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
 }
 
 .editTodo button:hover {
-  background-color: hsl(210, 12%, 25%);
+  background-color: hsl(210, 70%, 40%);
 }
 
 .editTodo button:active {
-  background-color: hsl(210, 12%, 15%);
+  background-color: hsl(210, 70%, 50%);
+}
+
+.editTodo textarea {
+  resize: none;
+}
+
+.editTodo label {
+  font-size: 18px;
+  color: hsl(210, 10%, 25%);
+  margin-bottom: 5px;
+}
+
+.editTodo .input-container {
+  position: relative;
+}
+
+.editTodo .input-container:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: hsl(210, 10%, 75%);
+  z-index: -1;
+  transition: height 0.3s ease-in-out;
+}
+
+.editTodo input:focus ~ .input-container:before,
+.editTodo textarea:focus ~ .input-container:before {
+  height: 100%;
+}
+
+.editTodo-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 99;
+  pointer-events: none;
+}
+
+.editTodo input,
+.editTodo textarea,
+.editTodo button {
+  pointer-events: auto;
+}
+
+.editTodoBackdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 99;
 }
