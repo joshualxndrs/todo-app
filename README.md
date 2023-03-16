@@ -4,9 +4,9 @@ Created using React and Firebase
 
 ## Video Demo
 
-Youtube Link:
+Youtube Link: https://youtu.be/Yv8bjYRmAjM
 
-### Student details
+### Student Details
 
 Joshua Alexander Silalahi
 <br>
