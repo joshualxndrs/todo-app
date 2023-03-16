@@ -2,7 +2,7 @@
 
 Created using React and Firebase
 
-## Available Scripts
+## Video Demo
 
 Youtube Link:
 
